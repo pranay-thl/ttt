@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const http = require('http');
 app.use(express.static('public'));
+app.set('port', (process.env.PORT || 8000));
 var array=[];
 var str_arr;
 var index = {};
@@ -55,7 +56,6 @@ app.get('/delay', function (req, res) {
   console.log("new req");
   setTimeout(() => { res.send("Hello World!") }, 2000);
 })
-var server = app.listen(8000, function () {
-  console.log('Example app listening on port 8000!')
-})
-server.timeout = 100000;
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
