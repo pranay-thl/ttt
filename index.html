@@ -19,14 +19,14 @@
 				<form class="form-inline">
 					<div class="form-group">
 						<label for="n" style="font-family:'Trebuchet MS'">Enter N:</label>
-						<input type="n" class="form-control" id="n" ng-model="n">
+						<input type="number" min="1" step="1" class="form-control" id="n" ng-model="n">
 					</div>
 					<button type="submit" class="btn btn-default" ng-click="getn()">Go</button>
 				</form>
 			</div>
 			<div style="margin-top:50px"></div>
 			<div class="row">
-				<p style="font-family:'Trebuchet MS';display:none;" id="error_msg">Error! Either n is less than 1 or greater than number of words</p>
+				<p style="font-family:'Trebuchet MS';display:none;" id="error_msg">Error! n is greater than number of words</p>
 				<div id="table_" class="container" style="display:none;overflow-y:auto; height:270px;width:700px">
 					<table class="table table-bordered" style="background-color:ghostwhite">
 						<thead>
